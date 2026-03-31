@@ -38,8 +38,8 @@ public class CustomClassLoaderTest {
                             true, loader);
 
                         System.out.println(Thread.currentThread() + " loaded class : " + clazz.getName());
-                    } catch (Exception ex) {
-                        ex.printStackTrace();
+                    } catch (ClassNotFoundException ex) {
+                        throw new RuntimeException(ex);
                     }
                 });
 
