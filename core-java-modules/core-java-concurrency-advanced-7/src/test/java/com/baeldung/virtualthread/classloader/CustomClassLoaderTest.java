@@ -31,7 +31,7 @@ public class CustomClassLoaderTest {
                 .withThreshold(Duration.ofMillis(1));
             recording.start();
 
-            Thread th1 = Thread.ofVirtual()
+            Thread th = Thread.ofVirtual()
                 .start(() -> {
                     try {
                         Class<?> clazz = Class.forName("com.baeldung.virtualthread.classloader.MyClass",
@@ -43,7 +43,7 @@ public class CustomClassLoaderTest {
                     }
                 });
 
-            th1.join();
+            th.join();
 
             recording.stop();
             recording.dump(file);

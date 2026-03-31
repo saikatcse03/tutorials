@@ -25,9 +25,9 @@ public class HeavyClassTest {
                 .withThreshold(Duration.ofMillis(1));
             recording.start();
 
-            Thread th1 = Thread.ofVirtual()
+            Thread th = Thread.ofVirtual()
                 .start(HeavyClass::new);
-            th1.join();
+            th.join();
 
             recording.stop();
             recording.dump(file);
