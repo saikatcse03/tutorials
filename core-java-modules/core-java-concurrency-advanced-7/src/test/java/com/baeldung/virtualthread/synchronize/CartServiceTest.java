@@ -52,7 +52,7 @@ public class CartServiceTest {
     }
 
     @Test
-    void givenProductsIsPresent_whenProductIsAdded_thenUpdate() throws InterruptedException {
+    void givenProductsIsPresent_whenProductIsAdded_thenProductIsUpdated() throws InterruptedException {
         String productId = "test2";
         Thread th1 = Thread.ofVirtual().start(() ->
             cartService.update(productId, 2));
@@ -70,7 +70,7 @@ public class CartServiceTest {
     }
 
     @Test
-    void givenProductIsNotPresent_whenProductIsAdded_thenUpdate() throws InterruptedException {
+    void givenProductIsNotPresent_whenProductIsAdded_thenProductIsUpdated() throws InterruptedException {
         String productId = "test3";
         Thread th = Thread.ofVirtual().start(() ->
             cartService.update(productId, 2));
