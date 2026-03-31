@@ -86,7 +86,6 @@
         <awaitility.version>1.7.0</awaitility.version>
         <maven.compiler.source.version>21</maven.compiler.source.version>
         <maven.compiler.target.version>21</maven.compiler.target.version>
-        <maven.shade.plugin.version>3.5.0</maven.shade.plugin.version>
         <jmh.core.version>1.37</jmh.core.version>
     </properties>
 
