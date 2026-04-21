@@ -34,16 +34,16 @@ public class CartService {
                     lock.unlock();
                 }
             }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
         }
     }
 
     private void simulateAPI() {
         try {
             Thread.sleep(50);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
         }
     }
 
