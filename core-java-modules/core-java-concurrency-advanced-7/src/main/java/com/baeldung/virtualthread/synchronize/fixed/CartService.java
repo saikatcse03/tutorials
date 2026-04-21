@@ -29,10 +29,10 @@ public class CartService {
                 try {
                     simulateAPI();
                     products.merge(productId, quantity, Integer::sum);
-                    LOGGER.info("Updated Cart for {} {}", productId, quantity);
-                } finally{
+                } finally {
                     lock.unlock();
                 }
+                LOGGER.info("Updated Cart for {} {}", productId, quantity);
             }
         } catch (InterruptedException ex) {
             throw new RuntimeException(ex);
