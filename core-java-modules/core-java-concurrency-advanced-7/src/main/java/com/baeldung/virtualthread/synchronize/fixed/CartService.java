@@ -26,11 +26,13 @@ public class CartService {
 
         try {
             if (lock.tryLock(500, TimeUnit.MILLISECONDS)) {
-                simulateAPI();
-                products.merge(productId, quantity, Integer::sum);
-
-                LOGGER.info("Updated Cart for {} {}", productId, quantity);
-                lock.unlock();
+                try {
+                    simulateAPI();
+                    products.merge(productId, quantity, Integer::sum);
+                    LOGGER.info("Updated Cart for {} {}", productId, quantity);
+                } finally{
+                    lock.unlock();
+                }
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
